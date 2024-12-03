@@ -7,7 +7,7 @@ const media = [
     url: 'https://videocdn.alibaba.com/icbu_vod_video/video_target/gv93-2f8e2476-a1ace553-92707862-61d1/trans/7629fc36-c180-4e6b-9747-f0fda3fde614-h264-hd.mp4',
     thumbnail: 'https://doritstore.com/wp-content/uploads/2024/11/IMG_20241107_020322_375.jpg'
   },
-   {
+  {
     type: 'image',
     url: 'https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/13/6320863/1.jpg?9025'
   },
@@ -65,8 +65,8 @@ export function ProductGallery() {
   const currentMedia = media[currentIndex];
 
   return (
-    <div className="space-y-4">
-      <div className="relative aspect-[4/5] bg-black rounded-2xl overflow-hidden">
+    <div className="p-4 space-y-4">
+      <div className="relative aspect-square bg-black rounded-2xl overflow-hidden">
         {currentMedia.type === 'video' ? (
           <>
             <video
@@ -82,21 +82,21 @@ export function ProductGallery() {
               <div className="absolute inset-0 flex items-center justify-center bg-black/30">
                 <button
                   onClick={handlePlayVideo}
-                  className="bg-purple-600/90 p-8 rounded-full hover:scale-110 transition-transform duration-300"
+                  className="bg-purple-600/90 p-4 sm:p-6 rounded-full hover:scale-110 transition-transform duration-300"
                 >
-                  <Play className="w-16 h-16 text-white" />
+                  <Play className="w-8 h-8 sm:w-12 sm:h-12 text-white" />
                 </button>
               </div>
             )}
             {isPlaying && (
               <button
                 onClick={toggleMute}
-                className="absolute bottom-4 right-4 bg-black/50 p-3 rounded-full"
+                className="absolute bottom-4 right-4 bg-black/50 p-2 sm:p-3 rounded-full"
               >
                 {isMuted ? (
-                  <VolumeX className="w-6 h-6 text-white" />
+                  <VolumeX className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 ) : (
-                  <Volume2 className="w-6 h-6 text-white" />
+                  <Volume2 className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 )}
               </button>
             )}
@@ -111,18 +111,18 @@ export function ProductGallery() {
 
         <button
           onClick={handlePrevious}
-          className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full disabled:opacity-50"
+          className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full disabled:opacity-50 hover:bg-white/90 transition-colors"
           disabled={currentIndex === 0}
         >
-          <ChevronLeft className="w-6 h-6" />
+          <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
         </button>
 
         <button
           onClick={handleNext}
-          className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full disabled:opacity-50"
+          className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full disabled:opacity-50 hover:bg-white/90 transition-colors"
           disabled={currentIndex === media.length - 1}
         >
-          <ChevronRight className="w-6 h-6" />
+          <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
         </button>
 
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
@@ -138,7 +138,7 @@ export function ProductGallery() {
         </div>
       </div>
 
-      <div className="grid grid-cols-4 gap-2 sm:gap-4">
+      <div className="grid grid-cols-5 gap-2 sm:gap-4">
         {media.map((item, idx) => (
           <button
             key={idx}
@@ -154,7 +154,7 @@ export function ProductGallery() {
             />
             {item.type === 'video' && (
               <div className="absolute inset-0 flex items-center justify-center bg-black/30">
-                <Play className="w-6 h-6 text-white" />
+                <Play className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
               </div>
             )}
           </button>
