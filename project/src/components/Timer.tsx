@@ -28,8 +28,8 @@ export function Timer() {
   }, []);
 
   return (
-    <div className="bg-black text-white p-4 rounded-lg text-center mb-8">
-      <p className="text-yellow-400 text-xl mb-2">Black Friday Sale - 10% DISCOUNT 🔥🔥🔥</p>
+    <div className="text-center">
+      <p className="text-yellow-400 text-lg sm:text-xl mb-2">Black Friday Sale - 10% DISCOUNT 🔥🔥🔥</p>
       <div className="flex justify-center space-x-4">
         <TimeUnit value={timeLeft.days} unit="Days" />
         <TimeUnit value={timeLeft.hours} unit="Hours" />
@@ -43,10 +43,10 @@ export function Timer() {
 function TimeUnit({ value, unit }: { value: number; unit: string }) {
   return (
     <div className="text-center">
-      <div className="bg-purple-600 rounded-lg p-2 min-w-[60px]">
-        <span className="text-2xl font-bold">{value}</span>
+      <div className="bg-purple-600 rounded-lg p-2 min-w-[50px] sm:min-w-[60px]">
+        <span className="text-xl sm:text-2xl font-bold">{value}</span>
       </div>
-      <p className="text-sm mt-1">{unit}</p>
+      <p className="text-xs sm:text-sm mt-1">{unit}</p>
     </div>
   );
 }
