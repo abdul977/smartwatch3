@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Landing } from './pages/Landing';
 import { AdminPanel } from './pages/AdminPanel';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
+import { PurchaseNotifications } from './components/PurchaseNotifications';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/admin" element={<AdminPanel />} />
       </Routes>
       <FloatingWhatsApp />
+      <PurchaseNotifications />
     </Router>
   );
 }
