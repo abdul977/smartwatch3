@@ -7,8 +7,8 @@ import { useNavigate } from 'react-router-dom';
 export function PriceSection() {
   const { quantity, setQuantity } = useOrderStore();
   const navigate = useNavigate();
-  const price = 37000;
-  const discount = 0.05; // 5% off
+  const price = 39000;
+  const discount = 0.10; // 10% off
   const discountedPrice = price * (1 - discount);
   const savings = price - discountedPrice;
 
