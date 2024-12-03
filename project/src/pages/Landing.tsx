@@ -4,6 +4,7 @@ import { ProductGallery } from '../components/ProductGallery';
 import { PriceSection } from '../components/PriceSection';
 import { ProductFeatures } from '../components/ProductFeatures';
 import { Reviews } from '../components/Reviews';
+import { ReviewForm } from '../components/ReviewForm';
 import { FAQ } from '../components/FAQ';
 import { StickyOrderBar } from '../components/StickyOrderBar';
 import { TimerSection } from '../components/TimerSection';
@@ -34,6 +35,10 @@ export function Landing() {
           
           <div className="bg-white rounded-2xl shadow-sm">
             <Reviews />
+          </div>
+          
+          <div className="bg-white rounded-2xl shadow-sm">
+            <ReviewForm />
           </div>
           
           <div className="bg-white rounded-2xl shadow-sm">

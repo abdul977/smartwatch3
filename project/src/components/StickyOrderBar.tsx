@@ -4,6 +4,9 @@ import { OrderModal } from './OrderModal';
 
 export function StickyOrderBar() {
   const [showOrderModal, setShowOrderModal] = useState(false);
+  const price = 39000;
+  const discount = 0.10; // 10% off
+  const discountedPrice = price * (1 - discount);
 
   return (
     <>
@@ -37,7 +40,7 @@ export function StickyOrderBar() {
               onClick={() => setShowOrderModal(true)}
               className="w-full sm:w-auto bg-purple-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-purple-700 transition-colors text-base sm:text-lg"
             >
-              Order Now - ₦35,150
+              Order Now - ₦{discountedPrice.toLocaleString()}
             </button>
           </div>
         </div>
