@@ -1,5 +1,4 @@
 import React from 'react';
-import { Timer } from './Timer';
 import { QuantitySelector } from './QuantitySelector';
 import { useOrderStore } from '../store/orderStore';
 import { ArrowLeft } from 'lucide-react';
@@ -14,7 +13,7 @@ export function PriceSection() {
   const savings = price - discountedPrice;
 
   return (
-    <div className="bg-white p-4 space-y-4">
+    <div className="p-4 sm:p-6 space-y-4">
       <div className="flex items-center mb-4">
         <button 
           onClick={() => navigate(-1)}
@@ -25,14 +24,11 @@ export function PriceSection() {
         </button>
       </div>
 
-      <div className="flex items-center justify-between">
-        <div>
-          <div className="text-3xl font-bold">₦{discountedPrice.toLocaleString()}</div>
-          <div className="text-red-500">
-            -{(discount * 100)}% | Save ₦{savings.toLocaleString()}
-          </div>
+      <div>
+        <div className="text-2xl sm:text-3xl font-bold">₦{discountedPrice.toLocaleString()}</div>
+        <div className="text-red-500 text-sm sm:text-base">
+          -{(discount * 100)}% | Save ₦{savings.toLocaleString()}
         </div>
-        <Timer />
       </div>
 
       <div className="text-sm text-gray-500">
